@@ -179,7 +179,7 @@ a{color:inherit}
 /* Hero logo mark (watermark) */
 .heroLogo{
   position:absolute;
-  top:50%;
+  top:46%;
   left:50%;
   transform:translate(-50%, -50%);
   z-index:0;
@@ -188,28 +188,22 @@ a{color:inherit}
 
 /* Watermark image */
 .heroLogoImg{
-  height:460px;
+  height:520px;
   width:auto;
   display:block;
-  opacity:0.16;          /* business subtle */
+  opacity:0.20;
   user-select:none;
   -webkit-user-select:none;
 }
 
 /* Mobile scaling */
 @media (max-width:768px){
-  .heroLogoImg{
-    height:340px;
-    opacity:0.14;
-  }
+  .heroLogoImg{ height:380px; opacity:0.16; }
+}
+@media (max-width:520px){
+  .heroLogoImg{ height:300px; opacity:0.14; }
 }
 
-@media (max-width:520px){
-  .heroLogoImg{
-    height:260px;
-    opacity:0.12;
-  }
-}
 
 /* Ensure text is above watermark */
 .panel.hero{
@@ -730,3 +724,4 @@ textarea.field{min-height:100px; resize:vertical}
   .orb{animation:none!important}
   .scrollHint{animation:none!important}
 }
+
