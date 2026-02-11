@@ -176,45 +176,48 @@ a{color:inherit}
   padding:40px 24px;
 }
 
-/* Hero logo mark */
+/* Hero logo mark (watermark) */
 .heroLogo{
-  width:120px; height:120px;
-  border-radius:32px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:28px;
-  background:rgba(29,78,216,.14);
-  border:1px solid rgba(106,166,255,.15);
-  position:relative;
-  font-weight:900;
-  font-size:48px;
-  letter-spacing:-.04em;
-  line-height:1;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  z-index:0;
+  pointer-events:none;
 }
+
+/* Watermark image */
 .heroLogoImg{
-  height:460px;      /* dovoljno velik da je brand prisutan */
+  height:460px;
   width:auto;
   display:block;
-  opacity:0.18;      /* KLJUČNO – pretvara ga u background element */
-  pointer-events:none;
+  opacity:0.16;          /* business subtle */
+  user-select:none;
+  -webkit-user-select:none;
+}
+
+/* Mobile scaling */
+@media (max-width:768px){
+  .heroLogoImg{
+    height:340px;
+    opacity:0.14;
+  }
 }
 
 @media (max-width:520px){
   .heroLogoImg{
-    height:56px;
+    height:260px;
+    opacity:0.12;
   }
 }
-.heroLogo::after{
-  content:"";
-  position:absolute;
-  inset:-20px;
-  border-radius:50%;
-  background:rgba(29,78,216,.15);
-  filter:blur(30px);
-  opacity:.5;
-  z-index:-1;
+
+/* Ensure text is above watermark */
+.panel.hero{
+  position:relative;
+  z-index:2;
 }
+
+/* Used on subpages (small G2 mark) */
 .heroG{color:var(--text)}
 .heroTwo{color:#6AA6FF; margin-left:2px}
 
@@ -414,13 +417,6 @@ a{color:inherit}
   transform:translateY(0) scale(1);
 }
 
-/* Hero logo gets the same bouncy entrance as service icons */
-.snapHero .fullCard .heroLogo{
-  transform: scale(.4) translateY(30px);
-  transition: opacity .7s cubic-bezier(.34,1.56,.64,1),
-              transform .7s cubic-bezier(.34,1.56,.64,1);
-}
-
 /* ═══════════════════════════════════════════════
    LAST PAGE: CONTACT
    ═══════════════════════════════════════════════ */
@@ -549,7 +545,6 @@ textarea.field{min-height:100px; resize:vertical}
    DESKTOP
    ═══════════════════════════════════════════════ */
 @media(min-width:760px){
-  .heroLogo{width:140px; height:140px; border-radius:38px; font-size:56px}
   .fullCardIconWrap{width:140px; height:140px; border-radius:38px}
   .fullCardIcon{width:68px; height:68px}
   .fullCardTitle{font-size:44px}
@@ -562,7 +557,6 @@ textarea.field{min-height:100px; resize:vertical}
    ═══════════════════════════════════════════════ */
 @media(max-width:520px){
   .snapHero{padding:16px 16px}
-  .heroLogo{width:100px; height:100px; border-radius:26px; font-size:40px}
   .fullCardIconWrap{width:100px; height:100px; border-radius:26px}
   .fullCardIcon{width:48px; height:48px}
   .fullCardTitle{font-size:28px}
@@ -736,5 +730,3 @@ textarea.field{min-height:100px; resize:vertical}
   .orb{animation:none!important}
   .scrollHint{animation:none!important}
 }
-
-
