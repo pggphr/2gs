@@ -202,10 +202,10 @@ a{color:inherit}
 
 /* Mobile scaling */
 @media (max-width:768px){
-  .heroLogoImg{ height:320px; opacity:0.18; }
+  .heroLogoImg{ height:320px; opacity:0.10; }
 }
 @media (max-width:520px){
-  .heroLogoImg{ height:240px; opacity:0.16; }
+  .heroLogoImg{ height:240px; opacity:0.09; }
 }
 
 /* Ensure text is above watermark */
@@ -216,7 +216,7 @@ a{color:inherit}
 
 /* Used on subpages (small G2 mark) */
 .heroG{color:var(--text)}
-.heroTwo{color:#6AA6FF; margin-left:2px}
+.heroTwo{color:#1D4ED8; margin-left:2px}
 
 /* Hero badge */
 .heroBadge{
@@ -353,6 +353,35 @@ a{color:inherit}
   line-height:1.1;
   margin:0 0 16px;
 }
+
+/* ── HERO polish: underline + slightly lifted watermark (hero-only) ── */
+.snapHero .fullCardTitle{
+  position:relative;
+  display:inline-block;
+}
+
+/* More pronounced line under the hero title (no glow, still serious) */
+.snapHero .fullCardTitle::after{
+  content:"";
+  display:block;
+  width:86px;
+  height:4px;
+  margin:16px auto 0;
+  border-radius:999px;
+  background:linear-gradient(90deg, #1D4ED8, #6AA6FF);
+  opacity:.95;
+}
+
+/* Lift the watermark slightly ONLY on the hero page */
+.snapHero .heroLogoImg{
+  transform:translateY(-8%);
+}
+
+/* Slightly smaller lift on small screens */
+@media (max-width:520px){
+  .snapHero .heroLogoImg{ transform:translateY(-6%); }
+}
+
 .fullCardDesc{
   font-size:17px;
   line-height:1.65;
@@ -623,7 +652,7 @@ textarea.field{min-height:100px; resize:vertical}
   z-index:-1;
 }
 .subHeadLogo .heroG{color:var(--text)}
-.subHeadLogo .heroTwo{color:#6AA6FF; margin-left:2px}
+.subHeadLogo .heroTwo{color:#1D4ED8; margin-left:2px}
 .subHead h1{
   font-size:36px;
   font-weight:800;
@@ -732,7 +761,3 @@ textarea.field{min-height:100px; resize:vertical}
   .orb{animation:none!important}
   .scrollHint{animation:none!important}
 }
-
-
-
-
