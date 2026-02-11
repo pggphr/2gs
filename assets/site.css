@@ -1,3 +1,23 @@
+/* ── Local Inter (self-hosted) ──────────────────────────
+   Put these files in: /assets/fonts/
+   - Inter-roman.var.woff2
+   - Inter-italic.var.woff2
+*/
+@font-face{
+  font-family:"Inter";
+  font-style:normal;
+  font-weight:100 900;
+  font-display:swap;
+  src:url("fonts/Inter-roman.var.woff2") format("woff2-variations");
+}
+@font-face{
+  font-family:"Inter";
+  font-style:italic;
+  font-weight:100 900;
+  font-display:swap;
+  src:url("fonts/Inter-italic.var.woff2") format("woff2-variations");
+}
+
 /* ─── G2 Solutions — site.css (clean + watermark tuned) ───────────────── */
 :root{
   --bg:#070B14;
@@ -761,29 +781,3 @@ textarea.field{min-height:100px; resize:vertical}
   .orb{animation:none!important}
   .scrollHint{animation:none!important}
 }
-
-/* ── HERO TWEAKS (bigger title + longer underline) ───────── */
-.snapHero .fullCardTitle{
-  font-size:40px;              /* default (between mobile + desktop) */
-}
-.snapHero .fullCardTitle::after{
-  width:140px;                 /* longer underline */
-  height:4px;
-  margin-top:18px;
-  opacity:0.95;
-}
-
-@media(min-width:760px){
-  .snapHero .fullCardTitle{ font-size:52px; }
-  .snapHero .fullCardTitle::after{ width:180px; }
-}
-
-@media(max-width:520px){
-  .snapHero .fullCardTitle{ font-size:32px; }
-  .snapHero .fullCardTitle::after{
-    width:110px;
-    height:3px;
-    margin-top:14px;
-  }
-}
-
