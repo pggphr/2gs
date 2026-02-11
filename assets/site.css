@@ -175,15 +175,17 @@ a{color:inherit}
   align-items:center;
   justify-content:center;
   padding:40px 24px;
-  position:relative; /* anchor for watermark */
+  position:relative; /* anchor for stacking */
+  isolation:isolate;
 }
 
 /* Hero logo mark (watermark) */
 .heroLogo{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%, -50%);
+  position:fixed;      /* centers relative to viewport (prevents drifting) */
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   z-index:0;
   pointer-events:none;
 }
