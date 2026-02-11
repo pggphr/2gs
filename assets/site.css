@@ -195,17 +195,17 @@ a{color:inherit}
   height:420px;
   width:auto;
   display:block;
-  opacity:0.3;
+  opacity:0.22;
   user-select:none;
   -webkit-user-select:none;
 }
 
 /* Mobile scaling */
 @media (max-width:768px){
-  .heroLogoImg{ height:320px; opacity:0.2; }
+  .heroLogoImg{ height:320px; opacity:0.18; }
 }
 @media (max-width:520px){
-  .heroLogoImg{ height:240px; opacity:0.18; }
+  .heroLogoImg{ height:240px; opacity:0.16; }
 }
 
 /* Ensure text is above watermark */
@@ -732,4 +732,5 @@ textarea.field{min-height:100px; resize:vertical}
   .orb{animation:none!important}
   .scrollHint{animation:none!important}
 }
+
 
