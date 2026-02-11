@@ -195,17 +195,17 @@ a{color:inherit}
   height:420px;
   width:auto;
   display:block;
-  opacity:0.14;
+  opacity:0.18;
   user-select:none;
   -webkit-user-select:none;
 }
 
 /* Mobile scaling */
 @media (max-width:768px){
-  .heroLogoImg{ height:320px; opacity:0.12; }
+  .heroLogoImg{ height:320px; opacity:0.16; }
 }
 @media (max-width:520px){
-  .heroLogoImg{ height:240px; opacity:0.10; }
+  .heroLogoImg{ height:240px; opacity:0.14; }
 }
 
 /* Ensure text is above watermark */
