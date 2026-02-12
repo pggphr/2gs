@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>G2 Solutions — Politika privatnosti</title>
+  <meta content="Politika privatnosti za web stranicu G2 Solutions." name="description"/>
+  <meta content="#0b1220" name="theme-color"/>
+  
+  <link href="https://pgrce.github.io/g2solutions/hr/privatnost/" rel="canonical"/>
+  <link rel="alternate" hreflang="x-default" href="https://pgrce.github.io/g2solutions/" />
+  <link rel="alternate" hreflang="en" href="https://pgrce.github.io/g2solutions/en/privacy/" />
+  <link rel="alternate" hreflang="hr" href="https://pgrce.github.io/g2solutions/hr/privatnost/" />
+
+  <meta name="robots" content="noindex"/>
+
+  <link href="../../favicon.ico" rel="icon"/>
+  <link href="../../apple-touch-icon.png" rel="apple-touch-icon"/>
+  <link rel="preload" href="../../assets/fonts/Inter-roman.var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/Inter-italic.var.woff2" as="font" type="font/woff2" crossorigin>
+  <link href="../../assets/site.css?v=2" rel="stylesheet"/>
+</head>
+<body class="subpage">
+<nav class="topbar" aria-label="Jezik">
+  <div class="lang">
+    <a aria-current="page" class="active" data-lang="hr" href="./">HR</a>
+    <a data-lang="en" href="../../en/privacy/">EN</a>
+  </div>
+</nav>
+<main class="wrap">
+
+<section class="subHead">
+  <a href="../" class="subHeadLogo" aria-label="G2 Solutions — Naslovnica">
+    <span class="heroG">G</span><span class="heroTwo">2</span>
+  </a>
+  <h1>Politika privatnosti</h1>
+  <p>Kako postupamo s vašim podacima na ovoj web stranici.</p>
+</section>
+
+<section class="panel" aria-label="Informacije o privatnosti">
+  <h2 style="font-size:18px;margin:0 0 12px">Voditelj obrade</h2>
+  <p style="margin:0 0 20px;color:var(--muted)">
+    G2 Core Informatics j.d.o.o.<br>
+    Karlovačka cesta 32C, 10020 Zagreb, Hrvatska<br>
+    E-pošta: <a href="mailto:info@g2core.hr">info@g2core.hr</a>
+  </p>
+
+  <h2 style="font-size:18px;margin:0 0 12px">Podaci koje prikupljamo</h2>
+  <p style="margin:0 0 20px;color:var(--muted)">
+    <strong style="color:var(--text)">Kontakt obrazac:</strong> Kada pošaljete poruku putem našeg obrasca za kontakt, prikupljamo vaše ime, e-mail adresu i sadržaj poruke. Te podatke obrađuje servis FormSubmit i šalje nam ih e-poštom. Koristimo ih isključivo kako bismo odgovorili na vaš upit.
+  </p>
+  <p style="margin:0 0 20px;color:var(--muted)">
+    <strong style="color:var(--text)">Odabir jezika:</strong> Pohranjujemo vašu preferenciju jezika (engleski ili hrvatski) u localStorage vašeg preglednika. To nije kolačić i ne šalje se na nikakav poslužitelj — ostaje na vašem uređaju.
+  </p>
+
+  <h2 style="font-size:18px;margin:0 0 12px">Što ne prikupljamo</h2>
+  <p style="margin:0 0 20px;color:var(--muted)">
+    Ne koristimo analitičke alate, piksele za praćenje niti reklamne kolačiće. Vaše podatke ne dijelimo s trećim stranama u marketinške svrhe.
+  </p>
+
+  <h2 style="font-size:18px;margin:0 0 12px">Vaša prava</h2>
+  <p style="margin:0 0 20px;color:var(--muted)">
+    Prema GDPR-u imate pravo pristupa, ispravka ili brisanja svojih osobnih podataka. Za ostvarivanje ovih prava kontaktirajte nas na <a href="mailto:info@g2core.hr">info@g2core.hr</a>.
+  </p>
+
+  <h2 style="font-size:18px;margin:0 0 12px">Usluge trećih strana</h2>
+  <p style="margin:0;color:var(--muted)">
+    <strong style="color:var(--text)">FormSubmit:</strong> Naš kontakt obrazac koristi FormSubmit za obradu poruka. Njihova politika privatnosti dostupna je na <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener">formsubmit.co/privacy.pdf</a>.
+  </p>
+</section>
+
+<footer class="footer">© 2026 G2 Solutions · <a href="mailto:info@g2core.hr">info@g2core.hr</a> · <a href="../impresum/">Impresum</a></footer>
+</main>
+
+<script>
+  // Save language choice
+  document.querySelectorAll('a[data-lang]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      try { localStorage.setItem('g2_lang', a.getAttribute('data-lang')); } catch (e) {}
+    });
+  });
+</script>
+</body>
+</html>
