@@ -8,7 +8,7 @@
   <meta content="#0b1220" name="theme-color"/>
 
   <link href="https://pgrce.github.io/g2solutions/hr/" rel="canonical"/>
-  <link rel="alternate" hreflang="x-default" href="https://pgrce.github.io/g2solutions/" />
+  <link rel="alternate" hreflang="x-default" href="https://pgrce.github.io/g2solutions/en/" />
   <link rel="alternate" hreflang="en" href="https://pgrce.github.io/g2solutions/en/" />
   <link rel="alternate" hreflang="hr" href="https://pgrce.github.io/g2solutions/hr/" />
 
@@ -28,8 +28,7 @@
   <link href="../favicon.ico" rel="icon"/>
   <link href="../apple-touch-icon.png" rel="apple-touch-icon"/>
     <link rel="preload" href="../assets/fonts/Inter-roman.var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../assets/fonts/Inter-italic.var.woff2" as="font" type="font/woff2" crossorigin>
-<link href="../assets/site.css" rel="stylesheet"/>
+<link href="../assets/site.css?v=3" rel="stylesheet"/>
 
 <script type="application/ld+json">
   {
@@ -153,8 +152,10 @@
         <input type="hidden" name="_captcha" value="false">
         <input type="text" name="_honey" style="display:none">
         <input type="hidden" name="_next" value="https://pgrce.github.io/g2solutions/hr/hvala.html">
+        <label class="srOnly" for="contactName">Ime</label>
         <input id="contactName" class="field" name="name" type="text" placeholder="Ime i tvrtka" autocomplete="name" required />
-        <input type="email" class="field" name="email" placeholder="Email adresa" required />
+        <label class="srOnly" for="contactEmail">Email</label>
+        <input id="contactEmail" type="email" class="field" name="email" placeholder="Email adresa" autocomplete="email" required />
         <textarea class="field" name="message" placeholder="Poruka" required></textarea>
         <button class="btn" type="submit">Pošalji email</button>
       </form>
@@ -174,77 +175,6 @@
   </a>
 </div>
 
-<script>
-(function(){
-  var wrap = document.querySelector('.snapWrap');
-  var pages = document.querySelectorAll('.snapPage');
-  var dots = document.querySelectorAll('.navDot');
-  var progressBar = document.querySelector('.scrollProgress');
-  var floating = document.querySelector('.floatMail');
-  var contactPage = document.getElementById('contact');
-  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  document.querySelectorAll('a[data-lang]').forEach(function(a){
-    a.addEventListener('click', function(){
-      try{localStorage.setItem('g2_lang',a.getAttribute('data-lang'))}catch(e){}
-    });
-  });
-
-  if('IntersectionObserver' in window){
-    var pageObs = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        entry.target.classList.toggle('is-active', entry.isIntersecting);
-        if(entry.isIntersecting){
-          var idx = Array.prototype.indexOf.call(pages, entry.target);
-          dots.forEach(function(d,i){ d.classList.toggle('is-current', i===idx); });
-          if(floating) floating.classList.toggle('is-hidden', entry.target === contactPage);
-        }
-      });
-    }, {root:wrap, threshold:0.5});
-    pages.forEach(function(p){ pageObs.observe(p); });
-  } else {
-    pages.forEach(function(p){ p.classList.add('is-active'); });
-  }
-
-  dots.forEach(function(dot){
-    dot.addEventListener('click', function(){
-      var idx = parseInt(dot.getAttribute('data-page'));
-      if(pages[idx]) pages[idx].scrollIntoView({behavior: prefersReduced ? 'auto' : 'smooth'});
-    });
-  });
-
-  if(floating){
-    floating.querySelector('a').addEventListener('click', function(e){
-      e.preventDefault();
-      if(contactPage) contactPage.scrollIntoView({behavior: prefersReduced ? 'auto' : 'smooth'});
-      setTimeout(function(){
-        var el = document.getElementById('contactName');
-        if(el) try{el.focus({preventScroll:true})}catch(e){el.focus()}
-      }, 600);
-    });
-  }
-
-  var ticking=false;
-  wrap.addEventListener('scroll', function(){
-    if(ticking) return;
-    ticking=true;
-    requestAnimationFrame(function(){
-      var scrollTop=wrap.scrollTop;
-      var scrollHeight=wrap.scrollHeight - wrap.clientHeight;
-      if(progressBar && scrollHeight>0) progressBar.style.transform='scaleX('+(scrollTop/scrollHeight)+')';
-      ticking=false;
-    });
-  }, {passive:true});
-
-  var params=new URLSearchParams(window.location.search);
-  if(params.has('focus') && params.get('focus')==='contactName'){
-    if(contactPage) contactPage.scrollIntoView();
-    setTimeout(function(){
-      var el=document.getElementById('contactName');
-      if(el) try{el.focus({preventScroll:true})}catch(e){el.focus()}
-    },600);
-  }
-})();
-</script>
+<script src="../assets/js/home.js?v=1" defer></script>
 </body>
 </html>

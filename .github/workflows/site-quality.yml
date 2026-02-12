@@ -1,0 +1,48 @@
+name: Site Quality
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  html-and-sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Validate HTML
+        run: npx --yes html-validate "index.html" "404.html" "en/**/*.html" "hr/**/*.html"
+
+      - name: Validate sitemap freshness
+        shell: pwsh
+        run: |
+          ./scripts/update-sitemap.ps1
+          git diff --exit-code sitemap.xml
+
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Link check
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --verbose --exclude-mail "index.html" "en/**/*.html" "hr/**/*.html"
+          fail: true
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Lighthouse CI
+        run: |
+          npm --no-fund --no-audit install --no-save @lhci/cli@0.14.x
+          npx lhci autorun --config=.lighthouserc.json

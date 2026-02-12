@@ -9,7 +9,7 @@
   <meta content="#0b1220" name="theme-color"/>
   
   <link href="https://pgrce.github.io/g2solutions/hr/training/" rel="canonical"/>
-  <link rel="alternate" hreflang="x-default" href="https://pgrce.github.io/g2solutions/" />
+  <link rel="alternate" hreflang="x-default" href="https://pgrce.github.io/g2solutions/en/" />
   <link rel="alternate" hreflang="en" href="https://pgrce.github.io/g2solutions/en/training/" />
   <link rel="alternate" hreflang="hr" href="https://pgrce.github.io/g2solutions/hr/training/" />
 
@@ -29,8 +29,7 @@
   <link href="../../favicon.ico" rel="icon"/>
   <link href="../../apple-touch-icon.png" rel="apple-touch-icon"/>
     <link rel="preload" href="../../assets/fonts/Inter-roman.var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../../assets/fonts/Inter-italic.var.woff2" as="font" type="font/woff2" crossorigin>
-<link href="../../assets/site.css?v=2" rel="stylesheet"/>
+<link href="../../assets/site.css?v=3" rel="stylesheet"/>
 
   <script type="application/ld+json">
   {
@@ -137,84 +136,6 @@
   </a>
 </div>
 
-<script>
-  // Staggered entrance animations
-  (function(){
-    var rows = [];
-    var h = document.querySelector('.subHead'); if(h) rows.push([h]);
-    var si = document.querySelectorAll('.serviceItem');
-    for(var i = 0; i < si.length; i += 2){
-      var row = [si[i]];
-      if(si[i+1]) row.push(si[i+1]);
-      rows.push(row);
-    }
-    var cta = document.querySelector('.panel.cta'); if(cta) rows.push([cta]);
-    var ft = document.querySelector('.wrap > .footer'); if(ft) rows.push([ft]);
-    var all = [];
-    rows.forEach(function(g){ g.forEach(function(el){ all.push(el); }); });
-    all.forEach(function(el){ el.style.opacity = '0'; });
-    rows.forEach(function(group, i){
-      setTimeout(function(){
-        group.forEach(function(el){ el.style.transition = 'opacity .8s ease'; el.style.opacity = '1'; });
-      }, 300 + i * 300);
-    });
-  })();
-
-  // Save language choice
-  document.querySelectorAll('a[data-lang]').forEach(function (a) {
-    a.addEventListener('click', function () {
-      try { localStorage.setItem('g2_lang', a.getAttribute('data-lang')); } catch (e) {}
-    });
-  });
-
-  // Smooth scroll for in-page links + focus the contact name field
-  (function(){
-    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    function focusContact(){
-      const el = document.getElementById('contactName');
-      if(!el) return;
-      try { el.focus({ preventScroll: true }); } catch(e){ el.focus(); }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(function(a){
-      a.addEventListener('click', function(e){
-        const id = a.getAttribute('href');
-        const target = document.querySelector(id);
-        if(!target) return;
-        e.preventDefault();
-        target.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' });
-        if(id === '#contact'){
-          if(prefersReduced) return focusContact();
-          window.setTimeout(focusContact, 350);
-        }
-      });
-    });
-
-    // Hide floating button when contact section is visible
-    const floating = document.querySelector('.floatMail');
-    const contact = document.querySelector('#contact');
-    if(!floating || !contact) return;
-    const setHidden = (hidden) => floating.classList.toggle('is-hidden', !!hidden);
-
-    if('IntersectionObserver' in window){
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if(entry.target !== contact) return;
-          setHidden(entry.isIntersecting);
-        });
-      }, { threshold: 0.18 });
-      io.observe(contact);
-    } else {
-      const onScroll = () => {
-        const r = contact.getBoundingClientRect();
-        const inView = r.top < window.innerHeight * 0.7 && r.bottom > window.innerHeight * 0.2;
-        setHidden(inView);
-      };
-      window.addEventListener('scroll', onScroll, { passive:true });
-      onScroll();
-    }
-  })();
-</script>
+<script src="../../assets/js/subpage.js?v=1" defer></script>
 </body>
 </html>

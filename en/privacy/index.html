@@ -8,7 +8,7 @@
   <meta content="#0b1220" name="theme-color"/>
   
   <link href="https://pgrce.github.io/g2solutions/en/privacy/" rel="canonical"/>
-  <link rel="alternate" hreflang="x-default" href="https://pgrce.github.io/g2solutions/" />
+  <link rel="alternate" hreflang="x-default" href="https://pgrce.github.io/g2solutions/en/" />
   <link rel="alternate" hreflang="en" href="https://pgrce.github.io/g2solutions/en/privacy/" />
   <link rel="alternate" hreflang="hr" href="https://pgrce.github.io/g2solutions/hr/privatnost/" />
 
@@ -17,8 +17,7 @@
   <link href="../../favicon.ico" rel="icon"/>
   <link href="../../apple-touch-icon.png" rel="apple-touch-icon"/>
   <link rel="preload" href="../../assets/fonts/Inter-roman.var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../../assets/fonts/Inter-italic.var.woff2" as="font" type="font/woff2" crossorigin>
-  <link href="../../assets/site.css?v=2" rel="stylesheet"/>
+  <link href="../../assets/site.css?v=3" rel="stylesheet"/>
 </head>
 <body class="subpage">
 <nav class="topbar" aria-label="Language">
@@ -72,13 +71,6 @@
 <footer class="footer">© 2026 G2 Solutions · <a href="mailto:info@g2core.hr">info@g2core.hr</a> · <a href="../legal/">Legal Notice</a></footer>
 </main>
 
-<script>
-  // Save language choice
-  document.querySelectorAll('a[data-lang]').forEach(function (a) {
-    a.addEventListener('click', function () {
-      try { localStorage.setItem('g2_lang', a.getAttribute('data-lang')); } catch (e) {}
-    });
-  });
-</script>
+<script src="../../assets/js/subpage.js?v=1" defer></script>
 </body>
 </html>

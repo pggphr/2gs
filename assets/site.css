@@ -23,17 +23,19 @@
   --max:980px;
 }
 
-@property --border-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
+@font-face{
+  font-family:"InterVar";
+  src:url("./fonts/Inter-roman.var.woff2") format("woff2");
+  font-weight:100 900;
+  font-style:normal;
+  font-display:swap;
 }
 
 *{box-sizing:border-box}
 
 body{
   margin:0;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family:"InterVar", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   background: var(--bg);
   color:var(--text);
   letter-spacing:-.01em;
@@ -60,6 +62,18 @@ body.subpage::before{
 }
 
 a{color:inherit}
+
+.srOnly{
+  position:absolute;
+  width:1px;
+  height:1px;
+  margin:-1px;
+  padding:0;
+  overflow:hidden;
+  border:0;
+  clip:rect(0, 0, 0, 0);
+  white-space:nowrap;
+}
 
 /* ── Snap Container ─────────────────────────── */
 .snapWrap{
@@ -739,6 +753,31 @@ textarea.field{min-height:100px; resize:vertical}
 /* CTA panel on subpages */
 .panel.cta{margin-top:24px}
 
+@keyframes fadeInUp{
+  from{opacity:0; transform:translateY(12px)}
+  to{opacity:1; transform:translateY(0)}
+}
+
+.subpage .subHead,
+.subpage .serviceGrid .serviceItem,
+.subpage .panel.cta,
+.subpage .wrap > .footer{
+  opacity:0;
+  animation:fadeInUp .7s ease forwards;
+}
+
+.subpage .subHead{animation-delay:.15s}
+.subpage .serviceGrid .serviceItem:nth-child(1),
+.subpage .serviceGrid .serviceItem:nth-child(2){animation-delay:.3s}
+.subpage .serviceGrid .serviceItem:nth-child(3),
+.subpage .serviceGrid .serviceItem:nth-child(4){animation-delay:.5s}
+.subpage .serviceGrid .serviceItem:nth-child(5),
+.subpage .serviceGrid .serviceItem:nth-child(6){animation-delay:.7s}
+.subpage .serviceGrid .serviceItem:nth-child(7),
+.subpage .serviceGrid .serviceItem:nth-child(8){animation-delay:.9s}
+.subpage .panel.cta{animation-delay:1.05s}
+.subpage .wrap > .footer{animation-delay:1.2s}
+
 @media(min-width:860px){
   .panel{padding:34px}
   .grid3{grid-template-columns:1fr 1fr 1fr; gap:16px}
@@ -757,6 +796,14 @@ textarea.field{min-height:100px; resize:vertical}
   .snapWrap{scroll-behavior:auto}
   .fullCard > *, .contactWrap > *{
     opacity:1!important; transform:none!important; transition:none!important;
+  }
+  .subpage .subHead,
+  .subpage .serviceGrid .serviceItem,
+  .subpage .panel.cta,
+  .subpage .wrap > .footer{
+    animation:none!important;
+    opacity:1!important;
+    transform:none!important;
   }
   .orb{animation:none!important}
   .scrollHint{animation:none!important}

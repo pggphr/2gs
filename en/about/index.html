@@ -8,7 +8,7 @@
   <meta content="#0b1220" name="theme-color"/>
   
   <link href="https://pgrce.github.io/g2solutions/en/about/" rel="canonical"/>
-  <link rel="alternate" hreflang="x-default" href="https://pgrce.github.io/g2solutions/" />
+  <link rel="alternate" hreflang="x-default" href="https://pgrce.github.io/g2solutions/en/" />
   <link rel="alternate" hreflang="en" href="https://pgrce.github.io/g2solutions/en/about/" />
   <link rel="alternate" hreflang="hr" href="https://pgrce.github.io/g2solutions/hr/o-nama/" />
 
@@ -28,8 +28,7 @@
   <link href="../../favicon.ico" rel="icon"/>
   <link href="../../apple-touch-icon.png" rel="apple-touch-icon"/>
     <link rel="preload" href="../../assets/fonts/Inter-roman.var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="../../assets/fonts/Inter-italic.var.woff2" as="font" type="font/woff2" crossorigin>
-<link href="../../assets/site.css?v=2" rel="stylesheet"/>
+<link href="../../assets/site.css?v=3" rel="stylesheet"/>
 
   <script type="application/ld+json">
   {
@@ -74,35 +73,6 @@
   </a>
 </div>
 
-<script>
-  // Staggered entrance animations
-  (function(){
-    var rows = [];
-    var h = document.querySelector('.subHead'); if(h) rows.push([h]);
-    var si = document.querySelectorAll('.serviceItem');
-    for(var i = 0; i < si.length; i += 2){
-      var row = [si[i]];
-      if(si[i+1]) row.push(si[i+1]);
-      rows.push(row);
-    }
-    var cta = document.querySelector('.panel.cta'); if(cta) rows.push([cta]);
-    var ft = document.querySelector('.wrap > .footer'); if(ft) rows.push([ft]);
-    var all = [];
-    rows.forEach(function(g){ g.forEach(function(el){ all.push(el); }); });
-    all.forEach(function(el){ el.style.opacity = '0'; });
-    rows.forEach(function(group, i){
-      setTimeout(function(){
-        group.forEach(function(el){ el.style.transition = 'opacity .8s ease'; el.style.opacity = '1'; });
-      }, 300 + i * 300);
-    });
-  })();
-
-  // Save language choice
-  document.querySelectorAll('a[data-lang]').forEach(function (a) {
-    a.addEventListener('click', function () {
-      try { localStorage.setItem('g2_lang', a.getAttribute('data-lang')); } catch (e) {}
-    });
-  });
-</script>
+<script src="../../assets/js/subpage.js?v=1" defer></script>
 </body>
 </html>
