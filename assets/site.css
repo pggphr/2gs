@@ -860,18 +860,21 @@ textarea.field{min-height:100px; resize:vertical}
   line-height:1.15;
   letter-spacing:-.02em;
   color:rgba(233,238,247,.96);
+  font-weight:600;
 }
 @media (max-width:520px){
   .heroHeadline{ font-size:22px; }
 }
 .heroSub{
   margin-top:0;
+  color:rgba(233,238,247,.78);
 }
 .heroTrust{
   margin:14px 0 0;
   color:rgba(233,238,247,.70);
   font-size:14px;
   line-height:1.5;
+  letter-spacing:.02em;
 }
 .heroActions{
   margin-top:26px;
@@ -907,7 +910,7 @@ textarea.field{min-height:100px; resize:vertical}
   margin-top:22px;
   color:rgba(233,238,247,.62);
   font-size:12.5px;
-  letter-spacing:.08em;
-  text-transform:uppercase;
+  letter-spacing:.02em;
+  text-transform:none;
 }
 .heroMicro .dot{color:#6AA6FF; padding:0 10px; font-weight:900}
