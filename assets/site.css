@@ -851,3 +851,63 @@ textarea.field{min-height:100px; resize:vertical}
     margin-top:14px;
   }
 }
+
+
+/* --- Homepage hero improvements --- */
+.heroHeadline{
+  margin:14px 0 10px;
+  font-size:28px;
+  line-height:1.15;
+  letter-spacing:-.02em;
+  color:rgba(233,238,247,.96);
+}
+@media (max-width:520px){
+  .heroHeadline{ font-size:22px; }
+}
+.heroSub{
+  margin-top:0;
+}
+.heroTrust{
+  margin:14px 0 0;
+  color:rgba(233,238,247,.70);
+  font-size:14px;
+  line-height:1.5;
+}
+.heroActions{
+  margin-top:26px;
+  display:flex;
+  gap:16px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.btnOutline{
+  border-radius:12px;
+  padding:13px 14px;
+  font-weight:700;
+  font-size:14px;
+  letter-spacing:.02em;
+  cursor:pointer;
+  color:rgba(233,238,247,.92);
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.02);
+  box-shadow:0 10px 26px rgba(0,0,0,.18);
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+.btnOutline:hover{
+  border-color: rgba(29,78,216,.55);
+  box-shadow:0 14px 34px rgba(29,78,216,.18);
+  background:rgba(255,255,255,.03);
+}
+.btnOutline:active{transform:translateY(1px)}
+.heroMicro{
+  margin-top:22px;
+  color:rgba(233,238,247,.62);
+  font-size:12.5px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.heroMicro .dot{color:#6AA6FF; padding:0 10px; font-weight:900}

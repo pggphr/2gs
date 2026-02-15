@@ -78,7 +78,22 @@
     }
   }
 
-  if (wrap) {
+  
+  // Hero CTA: scroll to contact section inside snap container
+  document.querySelectorAll('[data-action="contact"]').forEach(function (el) {
+    el.addEventListener("click", function () {
+      if (contactPage) {
+        contactPage.scrollIntoView({ behavior: prefersReduced ? "auto" : "smooth" });
+      }
+      setTimeout(function () {
+        var input = document.getElementById("contactName");
+        if (input) {
+          try { input.focus({ preventScroll: true }); } catch (e) { input.focus(); }
+        }
+      }, 600);
+    });
+  });
+if (wrap) {
     var ticking = false;
     wrap.addEventListener(
       "scroll",
