@@ -860,21 +860,18 @@ textarea.field{min-height:100px; resize:vertical}
   line-height:1.15;
   letter-spacing:-.02em;
   color:rgba(233,238,247,.96);
-  font-weight:600;
 }
 @media (max-width:520px){
   .heroHeadline{ font-size:22px; }
 }
 .heroSub{
   margin-top:0;
-  color:rgba(233,238,247,.78);
 }
 .heroTrust{
   margin:14px 0 0;
   color:rgba(233,238,247,.70);
   font-size:14px;
   line-height:1.5;
-  letter-spacing:.02em;
 }
 .heroActions{
   margin-top:26px;
@@ -910,7 +907,173 @@ textarea.field{min-height:100px; resize:vertical}
   margin-top:22px;
   color:rgba(233,238,247,.62);
   font-size:12.5px;
-  letter-spacing:.02em;
-  text-transform:none;
+  letter-spacing:.08em;
+  text-transform:uppercase;
 }
 .heroMicro .dot{color:#6AA6FF; padding:0 10px; font-weight:900}
+
+
+
+/* --- IT Support: reduce card monotony (editorial sections) --- */
+.panel.panelSection{
+  position: relative;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0 0 0 18px;
+  margin: 34px auto 0;
+  max-width: 980px;
+}
+
+.panel.panelSection .h1{
+  margin: 0 0 10px;
+}
+
+.panel.panelSection .p{
+  color: rgba(233,238,247,.80);
+}
+
+.panel.panelSection::before{
+  content: "";
+  display: block;
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  left: -18px;
+  top: 0;
+  bottom: 0;
+  background: rgba(110,153,255,.25);
+  border-radius: 2px;
+}
+
+@media (max-width: 980px){
+  .panel.panelSection{
+  position: relative;
+    max-width: 92vw;
+    padding-left: 14px;
+  }
+  .panel.panelSection::before{
+    left: 0;
+  }
+}
+
+.panel.panelHighlight{
+  background: rgba(18, 30, 60, .55);
+  border: 1px solid rgba(110,153,255,.22);
+  box-shadow: 0 0 0 1px rgba(110,153,255,.06), 0 14px 40px rgba(0,0,0,.35);
+}
+
+.panel.panelHighlight .p{
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* Make CTA feel like a section, not another card */
+.panel.panelCTA{
+  background: linear-gradient(180deg, rgba(18, 30, 60, .62), rgba(10, 18, 36, .35));
+  border: 1px solid rgba(110,153,255,.20);
+  box-shadow: 0 0 0 1px rgba(110,153,255,.06), 0 18px 54px rgba(0,0,0,.40);
+}
+
+.panel.panelCTA .h1{
+  margin-bottom: 10px;
+}
+
+.panel.panelCTA .btnPrimary{
+  transform: translateZ(0);
+}
+
+.panel.panelCTA .btnPrimary:hover{
+  filter: brightness(1.06);
+}
+
+
+
+/* --- IT Support: panel sections 2-column layout on desktop --- */
+@media (min-width: 980px){
+  .panel.panelSection{
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    column-gap: 26px;
+    row-gap: 10px;
+  }
+  .panel.panelSection .h1,
+  .panel.panelSection .p{
+    grid-column: 1;
+  }
+  .panel.panelSection .tags{
+    grid-column: 2;
+    grid-row: 1 / span 4;
+    align-self: start;
+    justify-content: flex-start;
+    margin-top: 6px;
+  }
+  .panel.panelSection .tag{
+    white-space: nowrap;
+  }
+}
+@media (max-width: 979px){
+  .panel.panelSection{
+    display: block;
+  }
+  .panel.panelSection .tags{
+    margin-top: 12px;
+  }
+}
+
+
+
+/* === Variant A: Consulting Premium (IT Support) === */
+body.itSupport.themeConsulting .serviceItem{
+  background: rgba(12, 18, 34, .52);
+  border-color: rgba(110,153,255,.15);
+  box-shadow: 0 10px 34px rgba(0,0,0,.30);
+}
+body.itSupport.themeConsulting .serviceItem:hover{
+  border-color: rgba(110,153,255,.24);
+  box-shadow: 0 14px 46px rgba(0,0,0,.36);
+}
+
+body.itSupport.themeConsulting .panel.panelSection::before{
+  width: 3px;
+  background: rgba(110,153,255,.38);
+}
+body.itSupport.themeConsulting .panel.panelSection .tags{
+  background: rgba(10, 16, 30, .55);
+  border: 1px solid rgba(110,153,255,.14);
+  border-radius: 14px;
+  padding: 14px 14px 10px;
+}
+body.itSupport.themeConsulting .panel.panelSection .tag{
+  background: rgba(255,255,255,.03);
+  border-color: rgba(255,255,255,.08);
+}
+
+body.itSupport.themeConsulting .gainList{
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 14px;
+}
+body.itSupport.themeConsulting .gainList li{
+  position: relative;
+  padding-left: 28px;
+  margin: 10px 0;
+  color: rgba(233,238,247,.86);
+  line-height: 1.55;
+}
+body.itSupport.themeConsulting .gainList li::before{
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(120, 190, 255, .95);
+}
+
+body.itSupport.themeConsulting .panel.panelHighlight{
+  box-shadow: 0 16px 52px rgba(0,0,0,.36);
+}
+body.itSupport.themeConsulting .panel.panelCTA{
+  background: rgba(14, 22, 44, .55);
+  border-color: rgba(110,153,255,.18);
+  box-shadow: 0 18px 58px rgba(0,0,0,.40);
+}
