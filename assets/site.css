@@ -1077,3 +1077,12 @@ body.itSupport.themeConsulting .panel.panelCTA{
   border-color: rgba(110,153,255,.18);
   box-shadow: 0 18px 58px rgba(0,0,0,.40);
 }
+
+
+/* --- Overrides: hero micro tags should NOT be uppercase or bold --- */
+.heroMicro.heroTags{
+  text-transform:none !important;
+  letter-spacing:.02em !important;
+  font-weight:500 !important;
+  color:rgba(233,238,247,.72) !important;
+}
