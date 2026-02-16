@@ -33,4 +33,4 @@ foreach ($entry in $entries) {
 }
 
 [void]$xml.Append("</urlset>$nl")
-$xml.ToString() | Set-Content -Path "sitemap.xml" -Encoding UTF8 -NoNewline
+$xml.ToString() | Set-Content -Path "sitemap.xml" -Encoding UTF8 -/g2s
