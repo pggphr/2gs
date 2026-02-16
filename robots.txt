@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pgrce.github.io/g2s/sitemap.xml
+Sitemap: https://pggphr.github.io/g2s/sitemap.xml
