@@ -1086,3 +1086,38 @@ body.itSupport.themeConsulting .panel.panelCTA{
   font-weight:500 !important;
   color:rgba(233,238,247,.72) !important;
 }
+
+
+
+/* --- IT Support: replace pill tag boxes with simple bullet columns --- */
+body.itSupport .bulletCols{
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 28px;
+}
+@media (max-width: 760px){
+  body.itSupport .bulletCols{ grid-template-columns: 1fr; }
+}
+body.itSupport .bulletCols li{
+  position: relative;
+  padding-left: 16px;
+  color: rgba(233,238,247,.82);
+  font-size: 14px;
+  line-height: 1.5;
+}
+body.itSupport .bulletCols li:before{
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(120,170,255,.85);
+}
+
+/* --- Homepage hero tagline: never caps/bold --- */
+.heroTags{
+  text-transform: none !important;
+  font-weight: 500 !important;
+}
