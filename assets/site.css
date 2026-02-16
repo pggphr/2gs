@@ -1098,7 +1098,6 @@ body.itSupport .bulletCols{
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px 28px;
   width: 100%;
-  max-width: 760px;
 }
 
 /* Anchor the bullet lists so they don’t look like they “fell from the sky”. */
@@ -1132,5 +1131,8 @@ body.itSupport .bulletCols li:before{
 /* --- Homepage hero tagline: never caps/bold --- */
 .heroTags{
   text-transform: none !important;
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
+
+/* --- IT Support layout: match the site's 980px rhythm --- */
+body.itSupport .contentWrap{ max-width: 980px; }
