@@ -1097,7 +1097,20 @@ body.itSupport .bulletCols{
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px 28px;
+  width: 100%;
+  max-width: 760px;
 }
+
+/* Anchor the bullet lists so they don’t look like they “fell from the sky”. */
+body.itSupport .bulletInset{
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 14px;
+  width: 100%;
+}
+body.itSupport .bulletInset .bulletCols{ margin: 0; }
 @media (max-width: 760px){
   body.itSupport .bulletCols{ grid-template-columns: 1fr; }
 }
