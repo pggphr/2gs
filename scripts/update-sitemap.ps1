@@ -1,5 +1,5 @@
 param(
-  [string]$BaseUrl = "https://pgrce.github.io/g2solutions"
+  [string]$BaseUrl = "https://polite-plant-0c171db03.4.azurestaticapps.net"
 )
 
 $ErrorActionPreference = "Stop"
