@@ -1,4 +1,8 @@
 {
+  "navigationFallback": {
+    "rewrite": "/en/index.html",
+    "exclude": ["/assets/*", "/hr/*", "/en/*"]
+  },
   "responseOverrides": {
     "404": {
       "rewrite": "/404.html"
@@ -11,16 +15,6 @@
     "Permissions-Policy": "geolocation=(), microphone=(), camera=()"
   },
   "routes": [
-    {
-      "route": "/",
-      "redirect": "/hr/",
-      "statusCode": 302
-    },
-    {
-      "route": "/index.html",
-      "redirect": "/hr/",
-      "statusCode": 302
-    },
     {
       "route": "/assets/*",
       "headers": {
