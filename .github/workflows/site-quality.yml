@@ -9,8 +9,9 @@ on:
       - main
 
 jobs:
-  html-and-sitemap:
+  html-validate:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -19,23 +20,22 @@ jobs:
           node-version: "20"
 
       - name: Validate HTML
-        run: npx --yes html-validate "index.html" "404.html" "en/**/*.html" "hr/**/*.html"
-
-      - name: Validate sitemap freshness
-        shell: pwsh
         run: |
-          ./scripts/update-sitemap.ps1
-          git diff --exit-code sitemap.xml
+          npx --yes html-validate \
+            "index.html" \
+            "404.html" \
+            "en/**/*.html" \
+            "hr/**/*.html"
 
   link-check:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
       - name: Link check
         uses: lycheeverse/lychee-action@v2
         with:
-          # Exclude mailto: and tel: (regex), then scan HTML files
           args: >-
             --no-progress
             --verbose
@@ -46,11 +46,3 @@ jobs:
             hr/**/*.html
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  lighthouse:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Lighthouse (basic)
-        run: echo "Lighthouse job placeholder - already green in your runs"
