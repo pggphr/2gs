@@ -1100,27 +1100,17 @@ body.itSupport .bulletCols{
   width: 100%;
 }
 
-/* IT Support aside box: visually align with service cards (same language, same weight). */
+/* Anchor the bullet lists so they don’t look like they “fell from the sky”. */
 body.itSupport .bulletInset{
   margin-top: 14px;
   padding: 14px;
   width: 100%;
   border-radius: 16px;
-  background: rgba(12, 18, 34, .52);
-  border: 1px solid rgba(110,153,255,.15);
-  box-shadow: 0 10px 34px rgba(0,0,0,.30);
+  border: 1px solid var(--stroke);
+  background: linear-gradient(180deg, rgba(12,18,35,.9), rgba(9,14,28,.9));
 }
 body.itSupport .bulletInset .bulletCols{ margin: 0; }
-
-/* Make the aside placement deterministic on desktop (avoid auto-grid quirks). */
-@media (min-width: 980px){
-  .panel.panelSection .bulletInset{
-    grid-column: 2;
-    grid-row: 1 / span 4;
-    align-self: start;
-    margin-top: 6px;
-  }
-}
+body.itSupport .bulletInset li{margin:6px 0; color:rgba(233,238,247,.78); line-height:1.6;}
 @media (max-width: 760px){
   body.itSupport .bulletCols{ grid-template-columns: 1fr; }
 }
@@ -1147,3 +1137,10 @@ body.itSupport .bulletCols li:before{
 
 /* --- IT Support layout: match the site's 980px rhythm --- */
 body.itSupport .contentWrap{ max-width: 980px; }
+
+
+/* IT Support: bento-like layout for sections that have an aside list */
+@media (min-width: 980px){
+  body.itSupport .panelSection.hasAside{display:grid; grid-template-columns: 1.35fr .65fr; gap:16px; align-items:start;}
+  body.itSupport .panelSection.hasAside > .bulletInset{grid-column:2; grid-row:1 / span 4; margin-top: 6px;}
+}
