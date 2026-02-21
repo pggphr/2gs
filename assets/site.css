@@ -1100,16 +1100,27 @@ body.itSupport .bulletCols{
   width: 100%;
 }
 
-/* Anchor the bullet lists so they don’t look like they “fell from the sky”. */
+/* IT Support aside box: visually align with service cards (same language, same weight). */
 body.itSupport .bulletInset{
   margin-top: 14px;
-  padding: 12px 14px;
-  background: rgba(255,255,255,.02);
-  border: 1px solid rgba(255,255,255,.06);
-  border-radius: 14px;
+  padding: 14px;
   width: 100%;
+  border-radius: 16px;
+  background: rgba(12, 18, 34, .52);
+  border: 1px solid rgba(110,153,255,.15);
+  box-shadow: 0 10px 34px rgba(0,0,0,.30);
 }
 body.itSupport .bulletInset .bulletCols{ margin: 0; }
+
+/* Make the aside placement deterministic on desktop (avoid auto-grid quirks). */
+@media (min-width: 980px){
+  .panel.panelSection .bulletInset{
+    grid-column: 2;
+    grid-row: 1 / span 4;
+    align-self: start;
+    margin-top: 6px;
+  }
+}
 @media (max-width: 760px){
   body.itSupport .bulletCols{ grid-template-columns: 1fr; }
 }
