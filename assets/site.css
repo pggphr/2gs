@@ -682,6 +682,34 @@ textarea.field{min-height:100px; resize:vertical}
   margin:0;
 }
 
+/* IT Support hero text hierarchy (avoid repeating homepage copy, improve readability) */
+.subHead .heroLead{
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.subHead .heroLeadMain{
+  color: rgba(233,238,247,.92);
+  font-weight: 600;
+  max-width: 680px;
+  margin: 0 0 10px;
+}
+.subHead .heroLeadSub{
+  color: rgba(233,238,247,.78);
+  max-width: 680px;
+  margin: 0 0 12px;
+}
+.subHead .heroLeadMicro{
+  color: rgba(233,238,247,.66);
+  font-size: 15.5px;
+  line-height: 1.7;
+  max-width: 720px;
+  margin: 0;
+}
+@media (max-width: 760px){
+  .subHead .heroLeadMicro{font-size:15px}
+}
+
 .panel{
   background: linear-gradient(180deg, rgba(14,23,48,.92), rgba(10,16,35,.92));
   backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
