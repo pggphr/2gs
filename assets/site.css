@@ -682,85 +682,69 @@ textarea.field{min-height:100px; resize:vertical}
   margin:0;
 
 
-/* IT Support hero text hierarchy (avoid repeating homepage copy, improve readability) */
-.subHead .heroLeadMain{
-  color: rgba(233,238,247,.92);
-  font-weight: 600;
-  max-width: 680px;
-  margin: 0 0 10px;
-}
-.subHead .heroLeadSub{
-  color: rgba(233,238,247,.78);
-  max-width: 680px;
-  margin: 0 0 12px;
-}
-.subHead .heroLeadMicro{
-  color: rgba(233,238,247,.66);
-  font-size: 15.5px;
-  line-height: 1.7;
-  max-width: 720px;
-  margin: 0;
-}
-@media (max-width: 760px){
-  .subHead .heroLeadMicro{font-size:15px}
-}
+/* IT Support hero text polish (readability + hierarchy) */
+body.itSupport .subHead{
+  margin-bottom: 44px;
 }
 
-/* IT Support hero text hierarchy (avoid repeating homepage copy, improve readability) */
-.subHead .heroLead{
-  max-width: 720px;
+body.itSupport .subHead .heroLead{
+  max-width: 680px;
   margin: 0 auto;
 }
 
-.subHead .heroLeadMain{
-  color: rgba(233,238,247,.92);
+body.itSupport .subHead .heroLeadMain{
+  color: rgba(233,238,247,.94);
   font-weight: 600;
-  max-width: 680px;
-  margin: 0 0 10px;
-}
-.subHead .heroLeadSub{
-  color: rgba(233,238,247,.78);
-  max-width: 680px;
-  margin: 0 0 12px;
-}
-.subHead .heroLeadMicro{
-  color: rgba(233,238,247,.66);
-  font-size: 15.5px;
-  line-height: 1.7;
-  max-width: 720px;
+  font-size: 17px;
+  line-height: 1.75;
   margin: 0;
 }
+
+body.itSupport .subHead .heroLeadSub{
+  color: rgba(233,238,247,.82);
+  line-height: 1.75;
+  margin: 12px 0 0;
+}
+
+body.itSupport .subHead .heroLeadMicro{
+  color: rgba(233,238,247,.74);
+  font-size: 15px;
+  line-height: 1.75;
+  margin: 12px 0 0;
+}
+
 @media (max-width: 760px){
-  .subHead .heroLeadMicro{font-size:15px}
+  body.itSupport .subHead{ margin-bottom: 36px; }
+  body.itSupport .subHead .heroLead{ max-width: 560px; }
+  body.itSupport .subHead .heroLeadMain{ font-size: 16.5px; }
+  body.itSupport .subHead .heroLeadMicro{ font-size: 14.5px; }
 }
 
-/* IT Support hero text hierarchy (avoid repeating homepage copy, improve readability) */
-.subHead .heroLead{
-  max-width: 720px;
-  margin: 0 auto;
+/* IT Support cards polish */
+body.itSupport .serviceItem{
+  padding: 16px;
+  gap: 14px;
 }
+body.itSupport .serviceItem h3{ margin: 0 0 6px; }
+body.itSupport .serviceItem p{ line-height: 1.55; }
 
-.subHead .heroLeadMain{
-  color: rgba(233,238,247,.92);
-  font-weight: 600;
-  max-width: 680px;
-  margin: 0 0 10px;
+/* IT Support panel spacing */
+body.itSupport .panel{
+  padding: 22px;
 }
-.subHead .heroLeadSub{
-  color: rgba(233,238,247,.78);
-  max-width: 680px;
-  margin: 0 0 12px;
+body.itSupport .panel .p{ line-height: 1.65; }
+body.itSupport .panel ul{ margin-top: 12px; }
+
+/* Two-column bullets: more air */
+body.itSupport .bulletCols{
+  gap: 10px 28px;
 }
-.subHead .heroLeadMicro{
-  color: rgba(233,238,247,.66);
-  font-size: 15.5px;
-  line-height: 1.7;
-  max-width: 720px;
+body.itSupport .bulletCols li{
+  line-height: 1.6;
   margin: 0;
 }
-@media (max-width: 760px){
-  .subHead .heroLeadMicro{font-size:15px}
-}
+
+
 
 .panel{
   background: linear-gradient(180deg, rgba(14,23,48,.92), rgba(10,16,35,.92));
