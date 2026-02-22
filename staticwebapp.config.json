@@ -1,7 +1,7 @@
 {
   "navigationFallback": {
     "rewrite": "/en/index.html",
-    "exclude": ["/assets/*", "/hr/*", "/en/*"]
+    "exclude": ["/assets/*", "/hr/*", "/en/*", "/.well-known/*"]
   },
   "responseOverrides": {
     "404": {
