@@ -75,6 +75,23 @@ a{color:inherit}
   white-space:nowrap;
 }
 
+
+
+/* Skip link (keyboard accessibility) */
+.skip-link{
+  position:absolute;
+  left:-9999px;
+  top:12px;
+  padding:10px 12px;
+  background:rgba(255,255,255,.10);
+  color:var(--text);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:12px;
+  z-index:1000;
+}
+.skip-link:focus{
+  left:12px;
+}
 /* ── Snap Container ─────────────────────────── */
 .snapWrap{
   height:100vh; height:100dvh;
@@ -258,13 +275,21 @@ a{color:inherit}
   user-select:none;
 }
 .lang a{
-  text-decoration:none; color:rgba(233,238,247,.60);
-  padding:6px 4px;
-  transition:color .2s ease, opacity .2s ease;
-  opacity:.6;
+  text-decoration:none;
+  /* Higher contrast for WCAG AA on a dark background */
+  color:rgba(233,238,247,.88);
+  opacity:1;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:44px;
+  min-height:44px;
+  padding:0 10px;
+  border-radius:999px;
+  transition:color .2s ease, opacity .2s ease, background .2s ease;
 }
-.lang a:hover{color:rgba(233,238,247,.90); opacity:.85;}
-.lang a.active{color:rgba(233,238,247,1); opacity:1; font-weight:600;}
+.lang a:hover{color:rgba(233,238,247,1); background:rgba(255,255,255,.04);}
+.lang a.active{color:rgba(233,238,247,1); background:rgba(255,255,255,.08); font-weight:650;}
 
 /* Scroll hint arrow */
 .scrollHint{
@@ -497,7 +522,7 @@ a{color:inherit}
   font-size:14px; outline:none;
   transition: border-color .25s ease, box-shadow .25s ease, background .25s ease;
 }
-.field::placeholder{color:rgba(233,238,247,.40)}
+.field::placeholder{color:rgba(233,238,247,.65)}
 textarea.field{min-height:100px; resize:vertical}
 .field:focus{
   border-color: rgba(29,78,216,.65);
@@ -517,7 +542,7 @@ textarea.field{min-height:100px; resize:vertical}
 .btn:hover{background-position:100% 0; box-shadow:0 14px 40px rgba(29,78,216,.30);}
 .btn:active{transform:translateY(1px)}
 
-.footer{margin-top:18px; text-align:center; color:rgba(233,238,247,.50); font-size:12.5px;}
+.footer{margin-top:18px; text-align:center; color:rgba(233,238,247,.78); font-size:12.5px;}
 
 /* Contact entrance */
 .contactWrap > *{
@@ -573,6 +598,13 @@ textarea.field{min-height:100px; resize:vertical}
   cursor:pointer;
   transition: background .3s ease, border-color .3s ease, transform .3s ease;
   padding:0;
+  position:relative;
+}
+/* Increase tap/click area to meet touch target guidance without changing the visible dot */
+.navDot::before{
+  content:"";
+  position:absolute;
+  inset:-18px;
 }
 .navDot:hover{border-color:rgba(233,238,247,.5)}
 .navDot.is-current{
@@ -933,7 +965,8 @@ textarea.field{min-height:100px; resize:vertical}
 .btnOutline:active{transform:translateY(1px)}
 .heroMicro{
   margin-top:22px;
-  color:rgba(233,238,247,.62);
+  /* Use a higher-contrast muted tone for small uppercase text */
+  color:var(--muted);
   font-size:12.5px;
   letter-spacing:.08em;
   text-transform:uppercase;

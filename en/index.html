@@ -55,6 +55,7 @@
 </script>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="scrollProgress"></div>
 <div class="orbs"><div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div><div class="orb orb4"></div></div>
 <nav aria-label="Language" class="topbar">
@@ -72,12 +73,12 @@
 <button aria-label="About" class="navDot" data-page="4" type="button"></button>
 <button aria-label="Contact" class="navDot" data-page="5" type="button"></button>
 </div>
-<div class="snapWrap">
+<main id="main" class="snapWrap">
 <!-- ═══ PAGE 1: HERO ═══ -->
 <section class="snapPage snapHero is-active">
 <div class="fullCard">
 <div class="heroLogo" role="img">
-<img alt="G2" class="heroLogoImg" src="../assets/brand/g2-mark.webp"/>
+<img alt="G2 Solutions" class="heroLogoImg" src="../assets/brand/g2-mark.webp" width="724" height="420" fetchpriority="high" decoding="async"/>
 </div>
 <h1 class="fullCardTitle heroTitle">G<span class="heroTwo">2</span> Solutions</h1>
 <h2 class="heroHeadline">Your external IT department</h2>
@@ -149,14 +150,15 @@
 <input autocomplete="name" class="field" id="contactName" name="name" placeholder="Name and company" required type="text"/>
 <label class="srOnly" for="contactEmail">Email</label>
 <input autocomplete="email" class="field" id="contactEmail" name="email" placeholder="Email address" required type="email"/>
-<textarea class="field" name="message" placeholder="Message" required></textarea>
+<label class="srOnly" for="contactMsg">Message</label>
+<textarea class="field" id="contactMsg" name="message" placeholder="Message" required></textarea>
 <button class="btn" type="submit">Send email</button>
 </form>
 </div>
 <footer class="footer">© 2026 G2 Solutions · <a href="mailto:info@g2s.hr">info@g2s.hr</a> · <a href="privacy/">Privacy</a> · <a href="legal/">Legal</a></footer>
 </div>
 </section>
-</div><!-- /snapWrap -->
+</main><!-- /snapWrap -->
 <div class="floatMail">
 <a aria-label="Send an enquiry" href="#contact" title="Send an enquiry">
 <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 24 24" width="20">
