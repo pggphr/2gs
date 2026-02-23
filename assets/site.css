@@ -591,26 +591,37 @@ textarea.field{min-height:100px; resize:vertical}
   z-index:100;
 }
 .navDot{
-  width:10px; height:10px;
+  width:44px;
+  height:44px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:transparent;
+  border:0;
+  padding:0;
+  cursor:pointer;
+  position:relative;
+}
+
+/* actual visible dot */
+.navDot::after{
+  content:"";
+  width:10px;
+  height:10px;
   border-radius:50%;
   border:2px solid rgba(233,238,247,.25);
   background:transparent;
-  cursor:pointer;
   transition: background .3s ease, border-color .3s ease, transform .3s ease;
-  padding:0;
-  position:relative;
 }
-/* Increase tap/click area to meet touch target guidance without changing the visible dot */
-.navDot::before{
-  content:"";
-  position:absolute;
-  inset:-18px;
+
+.navDot:hover::after{
+  border-color: rgba(233,238,247,.5);
 }
-.navDot:hover{border-color:rgba(233,238,247,.5)}
-.navDot.is-current{
-  background:rgba(233,238,247,.9);
-  border-color:rgba(233,238,247,.9);
-  transform:scale(1.25);
+
+.navDot.is-current::after{
+  background: rgba(233,238,247,.9);
+  border-color: rgba(233,238,247,.9);
+  transform: scale(1.25);
 }
 
 /* ── Focus styles ───────────────────────────── */
