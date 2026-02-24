@@ -934,6 +934,19 @@ textarea.field{min-height:100px; resize:vertical}
   font-size:50px !important;
   letter-spacing:-.02em !important;
 }
+
+/* Brand lockup inside the hero title (SVG mark + word) */
+.snapHero .brandLockup{
+  display:inline-flex;
+  align-items:baseline;
+  gap:.28em;
+}
+.snapHero .brandMarkImg{
+  height:1.05em;
+  width:auto;
+  transform:translateY(.06em);
+}
+.snapHero .brandWord{ display:inline-block; }
 .snapHero .fullCardTitle::after{
   width:160px;                 /* longer underline */
   height:4px;
