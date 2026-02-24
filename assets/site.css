@@ -744,7 +744,7 @@ textarea.field{min-height:100px; resize:vertical}
 }
 .subHeadLogo .heroG{color:var(--text)}
 .subHeadLogo .heroTwo{color:#1D4ED8; margin-left:2px}
-.subHeadLogo .subHeadMark{height:34px; width:auto; display:block}
+.subHeadLogo .subHeadMark{height:30px; width:auto; display:block}
 .subHead h1{
   font-size:36px;
   font-weight:800;
@@ -892,7 +892,7 @@ textarea.field{min-height:100px; resize:vertical}
 @media(max-width:520px){
   .subHeadLogo{width:64px; height:64px; border-radius:18px; font-size:28px}
 
-  .subHeadLogo .subHeadMark{height:28px}
+  .subHeadLogo .subHeadMark{height:26px}
   .subHead h1{font-size:28px}
   .subHead p{font-size:15px}
 }
