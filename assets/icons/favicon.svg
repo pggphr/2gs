@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 180" role="img" aria-label="G2 Solutions">
+  <title>G2 Solutions</title>
+
+  <style>
+    .g2 {
+      font-family: Montserrat, Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      font-weight: 700; /* Bold */
+      font-size: 140px;
+    }
+    .sol {
+      font-family: Montserrat, Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      font-weight: 600; /* SemiBold */
+      font-size: 74px;
+      letter-spacing: 0.5px;
+    }
+  </style>
+
+  <!-- Optički poravnata grupa -->
+  <g transform="translate(6, 22)">
+    <!-- G -->
+    <text class="g2" x="0" y="126" fill="#0F172A">G</text>
+
+    <!-- 2 (povećan razmak od G) -->
+    <text class="g2" x="112" y="126" fill="#1D4ED8">2</text>
+
+    <!-- SOLUTIONS (usklađeno s novom pozicijom 2) -->
+    <text class="sol" x="230" y="106" fill="#0F172A">SOLUTIONS</text>
+  </g>
+</svg>
