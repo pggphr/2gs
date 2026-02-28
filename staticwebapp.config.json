@@ -5,6 +5,7 @@
       "/assets/*",
       "/hr/*",
       "/en/*",
+      "/ads.txt",
       "/.well-known/*"
     ]
   },
